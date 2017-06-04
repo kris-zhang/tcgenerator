@@ -1,4 +1,6 @@
 # Compiled class file
+tcgenerator.iml
+.idea/
 *.class
 
 # Log file

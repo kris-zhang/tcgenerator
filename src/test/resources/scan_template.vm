@@ -1,0 +1,39 @@
+$k1
+$k2
+${yyyy}-${MM}-${dd} ${HH}:${mm}:${ss}
+$packageModel.name
+$classModel.name
+$classModel.simpleName
+
+annotations:
+#foreach ($anno in $class.annotation)
+    $!anno.name
+#end
+
+#foreach ($method in $methodModels)
+    $method.name$!{method.overrideIndex}
+    $method.isPublic
+    $method.isProtected
+    $method.isStatic
+    $method.isFinal
+    $method.isVolatile
+    $method.isInterface
+    $method.isTransient
+    $!method.retType.name
+    #foreach($param in $method.paramTypes)
+        $!param.name
+    #end
+    #foreach($annotation in $method.annotations)
+        $annotation.name
+    #end
+#end
+
+#foreach($field in $fieldModels)
+    $field.name
+    $!field.type.name
+    #foreach($annotation in $field.annotations)
+        $annotation.name
+    #end
+#end
+
+=============================================

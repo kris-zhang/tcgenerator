@@ -1,0 +1,38 @@
+{
+  "input": {
+    "filter": {
+      "targetPackage" : "java.io",
+      "recursive" : true,
+      "isPublic" : true,
+      "isLocalClass" : false,
+      "isAnonymousClass" : false,
+      "isInterface" : false,
+      "namePattern": "^String.*$",
+      "customize":"true"
+    }
+  },
+  "context" : {
+    "transform" : {
+      "classExpression" : "setName(name+'_test')",
+      "packageExpression" : "setName(name+'_test')",
+      "methodsExpression": "setName(name+'_test')",
+      "fieldsExpression": "setName(name+'_test')"
+    },
+    "customize": {
+      "k1": "'v1'",
+      "k2": "'v2'"
+    }
+  },
+  "render": {
+    "templatePath" : "scan_template.vm",
+    "engine" : "VELOCITY"
+  },
+  "output": {
+    "pathExpression" : "'/Users/gongzuo.zy/Desktop/tmp'",
+    "overwrite": true,
+    "fileNameExpression" : "get('classModel').simpleName+'.txt'"
+  },
+  "skipError": false,
+  "parallel": false,
+  "mode": "SCAN"
+}

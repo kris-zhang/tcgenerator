@@ -1,0 +1,41 @@
+#foreach ($context in $contexts)
+    $context.k1
+    $context.k2
+    ${context.yyyy}-${context.MM}-${context.dd} ${context.HH}:${context.mm}:${context.ss}
+    $context.packageModel.name
+    $context.classModel.name
+    $context.classModel.simpleName
+
+annotations:
+    #foreach ($anno in $context.class.annotation)
+        $!anno.name
+    #end
+
+    #foreach ($method in $context.methodModels)
+        $method.name$!{method.overrideIndex}
+        $method.isPublic
+        $method.isProtected
+        $method.isStatic
+        $method.isFinal
+        $method.isVolatile
+        $method.isInterface
+        $method.isTransient
+        $!method.retType.name
+        #foreach($param in $method.paramTypes)
+            $!param.name
+        #end
+        #foreach($annotation in $method.annotations)
+            $annotation.name
+        #end
+    #end
+
+    #foreach($field in $context.fieldModels)
+        $field.name
+        $!field.type.name
+        #foreach($annotation in $field.annotations)
+            $annotation.name
+        #end
+    #end
+
+=============================================
+#end
