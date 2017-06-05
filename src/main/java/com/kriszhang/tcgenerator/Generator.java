@@ -105,9 +105,9 @@ public class Generator {
 
         } catch(Exception ex) {
             if (Configuration.getConfig().isSkipError()) {
-                Throwables.propagate(ex);
+                System.err.println(ex.getMessage());
             } else {
-                handleException(ex);
+                Throwables.propagate(ex);
             }
         }
     }
