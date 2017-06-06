@@ -1,6 +1,6 @@
 # tcgenerator
 
-一个代码生成小工具，可以用来生成测试用例框架。实现基本原理是，通过指定class_path和filter，加载需要处理的类，然后通过反射拿到相关信息，在通过模板引擎将其渲染出来，之后输出文件。`input->context->context.tranform->context.customize->render->output`
+一个代码生成小工具，可以用来生成测试用例框架。实现基本原理是，通过指定class_path和filter，加载需要处理的类，然后通过反射拿到相关信息，在通过模板引擎将其渲染出来，之后输出文件。`input->context->context.tranform->context.customize->render->output`
 
 ## 基本模块
 
@@ -72,7 +72,7 @@ config与tcgenerator.jar([点击下载](https://github.com/kris-zhang/tcgenerato
 --- | --- | ---
 global | skipError | 在SCAN模式下生效，如果有一个文件处理失败则跳过(true)否则直接退出(false)
 global | parallel | 在SCAN模式下生效，用来多线程处理
-global | mode | 分为SCAN模式和STATISTICS模式，扫描模式是扫描每一个类，然后处理再迭代输出；统计模式则只渲染模板一次，输出一次。模式的上下文不同
+global | mode | 分为SCAN模式和STATISTICS模式，扫描模式是扫描每一个类，然后处理再迭代输出；统计模式则只渲染模板一次，输出一次。模式的上下文不同
 input | classpath | classpath路径，可指定多个，在路径下的所有jar都会加载到系统
 input.filter | targetPackage | 需要处理的包名字
 input.filter | recursive | 是否递归的扫描targetPackage
