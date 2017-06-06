@@ -1,26 +1,26 @@
 # tcgenerator
 
-一个代码生成小工具，可以用来生成测试用例框架。实现基本原理是，通过指定class_path和filter，加载需要处理的类，然后通过反射拿到相关信息，在通过模板引擎将其渲染出来，之后输出文件。`input->context->context.tranform->context.customize->render->output`
+一个代码生成小工具，可以用来生成测试用例框架。实现基本原理是，通过指定class_path和filter，加载需要处理的类，然后通过反射拿到相关信息，在通过模板引擎将其渲染出来，之后输出文件。`input->context->context.tranform->context.customize->render->output`
 
 ## 基本模块
 
 主要由以下几个模块组成：
 
-1. input，输入模块，用来指定需要处理的类的包路径以及classpath，同时可以指定过滤方式
-2. context，上下文，将类信息抽取录入到上下文中，作为SpEL和模板引擎的上下文
-3. render，渲染引擎，可指定不同渲染引擎，如velocity、mustache等
-4. output，将处理结果输出文件
+1. input，输入模块，用来指定需要处理的类的包路径以及classpath，同时可以指定过滤方式
+2. context，上下文，将类信息抽取录入到上下文中，作为SpEL和模板引擎的上下文
+3. render，渲染引擎，可指定不同渲染引擎，如velocity、mustache等
+4. output，将处理结果输出文件
 
 ## 如何开始
 
 > java -jar tcgenerator.jar config.json
 
-config与tcgenerator.jar([点击下载](https://github.com/kris-zhang/tcgenerator/files/1051049/tcgenerator.jar.zip))在同一个路径下。
+config与tcgenerator.jar([点击下载](https://github.com/kris-zhang/tcgenerator/files/1051049/tcgenerator.jar.zip))在同一个路径下。
 
 ## 配置解释
-
+
 如下是一个配置实例：
-
+
 ```json
 {
   "skipError": false,
@@ -72,7 +72,7 @@ config与tcgenerator.jar([点击下载](https://github.com/kris-zhang/tcgenera
 --- | --- | ---
 global | skipError | 在SCAN模式下生效，如果有一个文件处理失败则跳过(true)否则直接退出(false)
 global | parallel | 在SCAN模式下生效，用来多线程处理
-global | mode | 分为SCAN模式和STATISTICS模式，扫描模式是扫描每一个类，然后处理再迭代输出；统计模式则只渲染模板一次，输出一次。模式的上下文不同
+global | mode | 分为SCAN模式和STATISTICS模式，扫描模式是扫描每一个类，然后处理再迭代输出；统计模式则只渲染模板一次，输出一次。模式的上下文不同
 input | classpath | classpath路径，可指定多个，在路径下的所有jar都会加载到系统
 input.filter | targetPackage | 需要处理的包名字
 input.filter | recursive | 是否递归的扫描targetPackage
@@ -80,9 +80,9 @@ input.filter | isPublic | 是否是public class
 input.filter | isLocalClass | 是否是 local calss
 input.filter | isAnonymousClass | 是否是匿名类
 input.filter | isInterface | 是否是接口
-input.filter | namePattern | 类名字的pattern正则匹配
+input.filter | namePattern | 类名字的pattern正则匹配
 input.filter | customize | 用户自定义SpEL
-context | transform.classExpression | 类模型变换SpEL
+context | transform.classExpression | 类模型变换SpEL
 context | transform.packageExpression | 包模型变换SpEL
 context | transform.methodsExpression | 方法模型变换SpEL
 context | transform.fieldsExpression| 字段模型变换SpEL
@@ -92,10 +92,10 @@ render | templatePath | 模板引擎路径
 output| pathExpression | 输出路径的SpEL
 output | overwrite | 如果存在，是否覆盖
 output | fileNameExpression | 文件名SpEL
-
+
 ## 使用示例
 
-本实例将生成`com.alipay.xxx.biz.admin.service`包下所有类的public方法的测试用例junit框架。
+本实例将生成`com.alipay.xxx.biz.admin.service`包下所有类的public方法的测试用例junit框架。
 
 配置如下：
 
