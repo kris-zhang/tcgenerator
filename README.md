@@ -209,7 +209,7 @@ key: classModel
   "isNative":false,
   "isInterface":false,
   "isAbstract":false,
-  "isStrict":false,
+  "isStrict":false
 }
 ```
 
@@ -245,7 +245,7 @@ key: methodModels
   "isNative":false,
   "isInterface":false,
   "isAbstract":false,
-  "isStrict":false,
+  "isStrict":false
 }
 ```
 
@@ -286,7 +286,7 @@ key:fieldModels
   "isNative":false,
   "isInterface":false,
   "isAbstract":false,
-  "isStrict":false,
+  "isStrict":false
 
 }
 ```
@@ -316,16 +316,87 @@ key:fieldModels
 
 ```json
 {
-  "classModel":...,
-  "methodModels":...,
-  "packageModel":...,
-  "fieldModels":...,
-  "yyyy":"2017",
-  "month":"03",
-  "dd":"02",
-  "HH":"23",
-  "mm":"14",
-  "ss":"59"
+  "classModel": {
+    "name": "com.xxx.xx.XxxYyy",
+    "simpleName": "XxxYyy",
+    "annotations": [
+      {
+        "name": "NotNull"
+      }
+    ],
+    "isPublic": true,
+    "isProtected": false,
+    "isStatic": false,
+    "isFinal": false,
+    "isSynchronized": false,
+    "isVolatile": false,
+    "isTransient": false,
+    "isNative": false,
+    "isInterface": false,
+    "isAbstract": false,
+    "isStrict": false
+  },
+  "methodModels": {
+    "name": "put",
+    "annotations": [
+      {
+        "name": "NotNull"
+      }
+    ],
+    "retType": {
+      "name": "java.lang.String",
+      "simpleName": "String"
+    },
+    "paramTypes": [
+      {
+        "name": "java.lang.String",
+        "simpleName": "String"
+      }
+    ],
+    "isPublic": true,
+    "isProtected": false,
+    "isStatic": false,
+    "isFinal": false,
+    "isSynchronized": false,
+    "isVolatile": false,
+    "isTransient": false,
+    "isNative": false,
+    "isInterface": false,
+    "isAbstract": false,
+    "isStrict": false
+  },
+  "packageModel": {
+    "name": "com.xxx.xx"
+  },
+  "fieldModels": {
+    "name": "myField",
+    "annotations": [
+      {
+        "name": "NotNull"
+      }
+    ],
+    "type": {
+      "name": "java.lang.String",
+      "simpleName": "String"
+    },
+    "isPublic": true,
+    "isProtected": false,
+    "isStatic": false,
+    "isFinal": false,
+    "isSynchronized": false,
+    "isVolatile": false,
+    "isTransient": false,
+    "isNative": false,
+    "isInterface": false,
+    "isAbstract": false,
+    "isStrict": false
+  },
+  "yyyy": "2017",
+  "month": "03",
+  "dd": "02",
+  "HH": "23",
+  "mm": "14",
+  "ss": "59"
 }
 ```
 
@@ -346,16 +417,87 @@ key:fieldModels
 {
   "contexts": [
     {
-      "classModel":...,
-      "methodModels":...,
-      "packageModel":...,
-      "fieldModels":...,
-      "yyyy":"2017",
-      "month":"03",
-      "dd":"02",
-      "HH":"23",
-      "mm":"14",
-      "ss":"59"
+      "classModel": {
+        "name": "com.xxx.xx.XxxYyy",
+        "simpleName": "XxxYyy",
+        "annotations": [
+          {
+            "name": "NotNull"
+          }
+        ],
+        "isPublic": true,
+        "isProtected": false,
+        "isStatic": false,
+        "isFinal": false,
+        "isSynchronized": false,
+        "isVolatile": false,
+        "isTransient": false,
+        "isNative": false,
+        "isInterface": false,
+        "isAbstract": false,
+        "isStrict": false
+      },
+      "methodModels": {
+        "name": "put",
+        "annotations": [
+          {
+            "name": "NotNull"
+          }
+        ],
+        "retType": {
+          "name": "java.lang.String",
+          "simpleName": "String"
+        },
+        "paramTypes": [
+          {
+            "name": "java.lang.String",
+            "simpleName": "String"
+          }
+        ],
+        "isPublic": true,
+        "isProtected": false,
+        "isStatic": false,
+        "isFinal": false,
+        "isSynchronized": false,
+        "isVolatile": false,
+        "isTransient": false,
+        "isNative": false,
+        "isInterface": false,
+        "isAbstract": false,
+        "isStrict": false
+      },
+      "packageModel": {
+        "name": "com.xxx.xx"
+      },
+      "fieldModels": {
+        "name": "myField",
+        "annotations": [
+          {
+            "name": "NotNull"
+          }
+        ],
+        "type": {
+          "name": "java.lang.String",
+          "simpleName": "String"
+        },
+        "isPublic": true,
+        "isProtected": false,
+        "isStatic": false,
+        "isFinal": false,
+        "isSynchronized": false,
+        "isVolatile": false,
+        "isTransient": false,
+        "isNative": false,
+        "isInterface": false,
+        "isAbstract": false,
+        "isStrict": false
+      },
+      "yyyy": "2017",
+      "month": "03",
+      "dd": "02",
+      "HH": "23",
+      "mm": "14",
+      "ss": "59"
     }
   ]
 }
