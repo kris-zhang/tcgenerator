@@ -1,7 +1,11 @@
 # Compiled class file
 tcgenerator.iml
+.classpath
+.project
+.settings/
 .idea/
 *.class
+target/
 
 # Log file
 *.log
